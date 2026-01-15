@@ -7,7 +7,14 @@
   <title>akaboshi_ren</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
   <link rel="stylesheet" href="./images/style.css">
+  <style>
+    /* 슬라이더 스타일 커스텀 */
+    .swiper { width: 100%; height: auto; }
+    .swiper-slide img { width: 100%; display: block; }
+    .swiper-pagination-bullet-active { background: #0095f6 !important; }
+  </style>
 </head>
 <body>
     <div class="sns-content">
@@ -90,7 +97,15 @@
                 <div class="sns-post-prof-icon"><img src="./images/icon_akaboshi.jpg" alt=""></div>
                 <div class="sns-post-prof-name">akaboshi_ren</div>
             </div>
-            <div class="sns-post-img"><img src="./images/post_akaboshi2-1.png" alt=""></div>
+            <div class="sns-post-img">
+                <div class="swiper renSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./images/post_akaboshi2-1.png" alt=""></div>
+                        <div class="swiper-slide"><img src="./images/post_akaboshi2-2.png" alt=""></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
             <div class="sns-post-content">
                 <div class="sns-post-symbol">
                     <div class="sns-post-symbol-items">
@@ -101,7 +116,7 @@
                     <p class="sns-post-date">2023년 9월 6일</p>
                 </div>
                 <div class="sns-post-textbox">
-                    <p class="sns-post-text"><span class="span-bold">akaboshi_ren </span>【영상을 올렸다!】<br>완전 매운 야키소바 '아카야반구' 먹어봤어!<br>다들 체크해줘!</p>
+                    <p class="sns-post-text"><span class="span-bold">akaboshi_ren </span>【영상을 올렸다!】<br>완전 매운 신메뉴 '불닭야키소바' 먹어봤어!<br>다들 체크해줘!</p>
                     <div class="sns-post-comment-content">
                         <p class="sns-post-text-comments">댓글 527건</p>
                         <p class="sns-post-text-comment"><span class="span-bold">mobu_null1 </span>영상 진짜 웃겼어</p>
@@ -139,5 +154,17 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        // 슬라이드 초기화 실행
+        const swiper = new Swiper('.renSwiper', {
+            loop: true, // 무한 루프
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true, // 점 클릭 이동 가능
+            },
+        });
+    </script>
 </body>
 </html>
